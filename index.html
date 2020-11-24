@@ -11,7 +11,9 @@
           "paper",
           "scissors",
       ]
-
+function game (number) {
+    number = 0;
+    playRound();
 function playRound(playerSelection, computerSelection) { 
 playerSelection = prompt("Rock, Paper or Scissors?");
 playerSelection = playerSelection.toLowerCase();
@@ -21,35 +23,43 @@ computerSelection = options[random];
  
 {
   if (playerSelection === "rock" && computerSelection === "paper") {
-      return("Your Choice: "+playerSelection+" Computer Choice: "+computerSelection+" You Lose! Paper beats Rock");
+      console.log("Your Choice: "+playerSelection+" Computer Choice: "+computerSelection+" You Lose! Paper beats Rock");
 
   }
   else if (playerSelection === "rock" && computerSelection === "scissors") {
-      return("Your Choice: "+playerSelection+" Computer Choice: "+computerSelection+" You Win! Rock beats Scissors");
+    console.log("Your Choice: "+playerSelection+" Computer Choice: "+computerSelection+" You Win! Rock beats Scissors");
 
   }
   else if (playerSelection === "paper" && computerSelection === "scissors") {
-      return("Your Choice: "+playerSelection+" Computer Choice: "+computerSelection+" You Lose! Scissors beats Paper");
+    console.log("Your Choice: "+playerSelection+" Computer Choice: "+computerSelection+" You Lose! Scissors beats Paper");
 
   }
   else if (playerSelection === "paper" && computerSelection === "rock") {
-      return("Your Choice: "+playerSelection+" Computer Choice: "+computerSelection+" You Win! Paper beats Rock");
+    console.log("Your Choice: "+playerSelection+" Computer Choice: "+computerSelection+" You Win! Paper beats Rock");
 
   }
   else if (playerSelection === "scissors" && computerSelection === "rock") {
-      return("Your Choice: "+playerSelection+" Computer Choice: "+computerSelection+" You lose! Rock beats Scissors");
+    console.log("Your Choice: "+playerSelection+" Computer Choice: "+computerSelection+" You lose! Rock beats Scissors");
 
   }
   else if (playerSelection === "scissors" && computerSelection === "paper") {
-      return("Your Choice: "+playerSelection+" Computer Choice: "+computerSelection+" You Win! Scissors beats Paper");
+    console.log("Your Choice: "+playerSelection+" Computer Choice: "+computerSelection+" You Win! Scissors beats Paper");
 
   }
   else {
-      return("Your Choice: "+playerSelection+" Computer Choice: "+computerSelection+" It‘s a Tie");
+    console.log("Your Choice: "+playerSelection+" Computer Choice: "+computerSelection+" It‘s a Tie");
 
   }  
 }
 }
+}
+
+for (number = 0; number <=5; number++) {
+    game(number);
+}
+
+
+
 
 
 

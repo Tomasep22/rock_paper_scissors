@@ -3,8 +3,12 @@
 <head>
     <title>Rock, Paper, Scissors</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <button id="rock" data-btn="rock" class="btn">Rock</button>
+  <button data-btn="paper" class="btn">Paper</button>
+  <button data-btn="scissors" class="btn">Scissors</button>
 <script>
      const options = [
           "rock",
@@ -13,18 +17,19 @@
       ]
       let playerScore = 0;
       let compScore = 0;
-function game (number) {
-  console.log("Round " + number + "/5");
-    playRound();
+//function game (number) {
+  //console.log("Round " + number + "/5");
+    //playRound();
+
+function choose(e) {
+playRound(e.target.getAttribute("data-btn"));
+}
+
 function playRound(playerSelection, computerSelection) {
-playerSelection = 1;
-playerSelection = prompt("Rock, Paper or Scissors?");
-playerSelection = playerSelection.toLowerCase();
+
 const random = Math.floor(Math.random() * options.length);
 computerSelection = options[random];
 
-
- 
 {
   if (playerSelection === "rock" && computerSelection === "paper") {
       console.log("Your Choice: "+playerSelection+" Computer Choice: "+computerSelection+" You Lose! Paper beats Rock");
@@ -56,29 +61,36 @@ computerSelection = options[random];
     compScore = compScore + 0.5;
   }
   console.log("Your Score: " + playerScore);
-  console.log("Comp Score: " + compScore);  
-}
-}
-}
+  console.log("Comp Score: " + compScore); 
 
-for (number = 1; number <=5; number++) {
-    game(number);
 }
+}
+ 
+//}
 
-if (playerScore < compScore) {
-  console.log("Computer Wins the game, try again!");
-}
-else if (playerScore > compScore) {
-  console.log("Congratulations!!! you Win the game");
-}
+// For now, remove the logic that plays exactly five rounds.
+//for (number = 1; number <=5; number++) {
+//    game(number);
+//}
 
-else if (playerScore = compScore) {
-  console.log("Game ends in a Tie");
-}
-else {
-  console.log("The game has been canceled, please refresh the page");
-}
+//if (playerScore < compScore) {
+//  console.log("Computer Wins the game, try again!");
+//}
+//else if (playerScore > compScore) {
+//  console.log("Congratulations!!! you Win the game");
+//}
+//
+//else if (playerScore = compScore) {
+//  console.log("Game ends in a Tie");
+//}
+//else {
+//  console.log("The game has been canceled, please refresh the page");
+//}
 
+
+const btns = document.querySelectorAll(".btn");
+btns.forEach(btn => { btn.addEventListener("click", choose);
+});
 
 
 
